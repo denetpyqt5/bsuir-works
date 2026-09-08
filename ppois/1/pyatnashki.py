@@ -12,7 +12,7 @@ class Fives:
     def __str__(self):
         return f"{self.current_matrix[0:3]} \n{self.current_matrix[3:6]} \n{self.current_matrix[6:9]}"
 
-    def is_correct(self):
+    def __bool__(self):
         return True if self.current_matrix == self.correct_matrix else False
 
 if __name__ == "__main__":

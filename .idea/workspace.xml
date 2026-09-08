@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48c53310-d279-4359-8bbd-d77d1fd227f3" name="Changes" comment="Adapted the project to the required version, implemented the base classes for the algorithm, and created an empty file for the second one.">
+    <list default="true" id="48c53310-d279-4359-8bbd-d77d1fd227f3" name="Changes" comment="made basic class in pyatnashki.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ppois/1/algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/1/algorithm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ppois/1/pyatnashki.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/1/pyatnashki.py" afterDir="false" />
@@ -38,6 +38,9 @@
     &quot;accountId&quot;: &quot;2bbfa92e-def3-4ee6-82eb-a2ce8a1097f0&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -46,19 +49,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.algorithm.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.pyatnashki.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "first-ppois",
-    "last_opened_file_path": "C:/Users/aieng/OneDrive/Desktop/AllPycharmProjects/bsuir-works",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.algorithm.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pyatnashki.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;first-ppois&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/aieng/OneDrive/Desktop/AllPycharmProjects/bsuir-works&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\aieng\OneDrive\Desktop\bsuir-works\ppois\1\.venv" />
@@ -111,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1788871096007</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="made basic class in pyatnashki.py">
+      <option name="closed" value="true" />
+      <created>1788873430232</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1788873430232</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -167,6 +178,7 @@
     <MESSAGE value="add directory for ppois labs, create folder for first lab and empty file main.py" />
     <MESSAGE value="added test code" />
     <MESSAGE value="Adapted the project to the required version, implemented the base classes for the algorithm, and created an empty file for the second one." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adapted the project to the required version, implemented the base classes for the algorithm, and created an empty file for the second one." />
+    <MESSAGE value="made basic class in pyatnashki.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="made basic class in pyatnashki.py" />
   </component>
 </project>
