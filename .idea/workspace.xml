@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48c53310-d279-4359-8bbd-d77d1fd227f3" name="Changes" comment="made basic class in pyatnashki.py">
+    <list default="true" id="48c53310-d279-4359-8bbd-d77d1fd227f3" name="Changes" comment="added main functional in algorithm.py for MarkovNormalAlgorithms">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ppois/1/algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/1/algorithm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ppois/1/pyatnashki.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/1/pyatnashki.py" afterDir="false" />
@@ -122,7 +122,15 @@
       <option name="project" value="LOCAL" />
       <updated>1788873430232</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added main functional in algorithm.py for MarkovNormalAlgorithms">
+      <option name="closed" value="true" />
+      <created>1788888154241</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1788888154241</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -179,6 +187,7 @@
     <MESSAGE value="added test code" />
     <MESSAGE value="Adapted the project to the required version, implemented the base classes for the algorithm, and created an empty file for the second one." />
     <MESSAGE value="made basic class in pyatnashki.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="made basic class in pyatnashki.py" />
+    <MESSAGE value="added main functional in algorithm.py for MarkovNormalAlgorithms" />
+    <option name="LAST_COMMIT_MESSAGE" value="added main functional in algorithm.py for MarkovNormalAlgorithms" />
   </component>
 </project>

@@ -30,7 +30,6 @@ class MarkovNormalAlgorithms(Alphabet, Rules):
             return self.state
         except Exception:
             return False
-            pass
 
     def convert(self):
         i = 0
