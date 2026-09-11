@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48c53310-d279-4359-8bbd-d77d1fd227f3" name="Changes" comment="created functions _choose , _move, __bool__ and game_start, first working version">
+    <list default="true" id="48c53310-d279-4359-8bbd-d77d1fd227f3" name="Changes" comment="added UserInterface in algorithm.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ppois/1/algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/1/algorithm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ppois/1/pyatnashki.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/1/pyatnashki.py" afterDir="false" />
@@ -138,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1788957902408</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added UserInterface in algorithm.py">
+      <option name="closed" value="true" />
+      <created>1789111304404</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1789111304404</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -197,6 +205,7 @@
     <MESSAGE value="made basic class in pyatnashki.py" />
     <MESSAGE value="added main functional in algorithm.py for MarkovNormalAlgorithms" />
     <MESSAGE value="created functions _choose , _move, __bool__ and game_start, first working version" />
-    <option name="LAST_COMMIT_MESSAGE" value="created functions _choose , _move, __bool__ and game_start, first working version" />
+    <MESSAGE value="added UserInterface in algorithm.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="added UserInterface in algorithm.py" />
   </component>
 </project>
