@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48c53310-d279-4359-8bbd-d77d1fd227f3" name="Changes" comment="added main functional in algorithm.py for MarkovNormalAlgorithms">
+    <list default="true" id="48c53310-d279-4359-8bbd-d77d1fd227f3" name="Changes" comment="created functions _choose , _move, __bool__ and game_start, first working version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ppois/1/algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/1/algorithm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ppois/1/pyatnashki.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/1/pyatnashki.py" afterDir="false" />
@@ -130,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1788888154241</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="created functions _choose , _move, __bool__ and game_start, first working version">
+      <option name="closed" value="true" />
+      <created>1788957902408</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1788957902408</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -188,6 +196,7 @@
     <MESSAGE value="Adapted the project to the required version, implemented the base classes for the algorithm, and created an empty file for the second one." />
     <MESSAGE value="made basic class in pyatnashki.py" />
     <MESSAGE value="added main functional in algorithm.py for MarkovNormalAlgorithms" />
-    <option name="LAST_COMMIT_MESSAGE" value="added main functional in algorithm.py for MarkovNormalAlgorithms" />
+    <MESSAGE value="created functions _choose , _move, __bool__ and game_start, first working version" />
+    <option name="LAST_COMMIT_MESSAGE" value="created functions _choose , _move, __bool__ and game_start, first working version" />
   </component>
 </project>
