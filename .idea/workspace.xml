@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48c53310-d279-4359-8bbd-d77d1fd227f3" name="Changes" comment="added UserInterface in pyatnashki.py, moved class ValidInput in file input.py">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ppois/1/algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/1/algorithm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ppois/1/pyatnashki.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/1/pyatnashki.py" afterDir="false" />
-    </list>
+    <list default="true" id="48c53310-d279-4359-8bbd-d77d1fd227f3" name="Changes" comment="added proper game generation to eliminate impossible options,fixed the algorithm.py file, corrected minor details and brought both projects to a working version." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -157,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1789112987049</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added proper game generation to eliminate impossible options,fixed the algorithm.py file, corrected minor details and brought both projects to a working version.">
+      <option name="closed" value="true" />
+      <created>1789210305179</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1789210305179</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -218,7 +222,8 @@
     <MESSAGE value="created functions _choose , _move, __bool__ and game_start, first working version" />
     <MESSAGE value="added UserInterface in algorithm.py" />
     <MESSAGE value="added UserInterface in pyatnashki.py, moved class ValidInput in file input.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="added UserInterface in pyatnashki.py, moved class ValidInput in file input.py" />
+    <MESSAGE value="added proper game generation to eliminate impossible options,fixed the algorithm.py file, corrected minor details and brought both projects to a working version." />
+    <option name="LAST_COMMIT_MESSAGE" value="added proper game generation to eliminate impossible options,fixed the algorithm.py file, corrected minor details and brought both projects to a working version." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
