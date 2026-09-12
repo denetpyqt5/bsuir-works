@@ -75,6 +75,5 @@ class UserInterface:
 
 if __name__ == "__main__":
     alg = MarkovNormalAlgorithms("DABCCBCCD", "A", "B", "C", A="B", B="C", C="@@", D="S")
-    print(MarkovNormalAlgorithms.__mro__)
     interface = UserInterface(alg)
     interface.start_dialog()
