@@ -4,20 +4,21 @@ from input import ValidInput
 
 
 class Alphabet:
-    def __init__(self, *args):
+    def __init__(self, *args,**kwargs):
         self._symbols: list = [*args]
+        super().__init__(**kwargs)
 
 
 class Rules:
     def __init__(self, **kwargs):
         self._rules: dict = kwargs
+        super().__init__()
 
 
 class MarkovNormalAlgorithms(Alphabet, Rules):
     def __init__(self, state: str, *args, **kwargs):
         self.state = state + '\n'
-        Alphabet.__init__(self, *args)
-        Rules.__init__(self, **kwargs)
+        super().__init__(*args,**kwargs)
 
     def __str__(self) -> str:
         return (f"state: {self.state[:-1]},"
@@ -74,6 +75,6 @@ class UserInterface:
 
 if __name__ == "__main__":
     alg = MarkovNormalAlgorithms("DABCCBCCD", "A", "B", "C", A="B", B="C", C="@@", D="S")
-
+    print(MarkovNormalAlgorithms.__mro__)
     interface = UserInterface(alg)
     interface.start_dialog()

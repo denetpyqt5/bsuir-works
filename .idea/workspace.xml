@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48c53310-d279-4359-8bbd-d77d1fd227f3" name="Changes" comment="added UserInterface in algorithm.py">
+    <list default="true" id="48c53310-d279-4359-8bbd-d77d1fd227f3" name="Changes" comment="added UserInterface in pyatnashki.py, moved class ValidInput in file input.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ppois/1/algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/1/algorithm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ppois/1/pyatnashki.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/1/pyatnashki.py" afterDir="false" />
@@ -38,6 +38,9 @@
     &quot;accountId&quot;: &quot;2bbfa92e-def3-4ee6-82eb-a2ce8a1097f0&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/ppois/1/.venv/input.py" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -146,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1789111304404</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added UserInterface in pyatnashki.py, moved class ValidInput in file input.py">
+      <option name="closed" value="true" />
+      <created>1789112987049</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1789112987049</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -206,6 +217,14 @@
     <MESSAGE value="added main functional in algorithm.py for MarkovNormalAlgorithms" />
     <MESSAGE value="created functions _choose , _move, __bool__ and game_start, first working version" />
     <MESSAGE value="added UserInterface in algorithm.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="added UserInterface in algorithm.py" />
+    <MESSAGE value="added UserInterface in pyatnashki.py, moved class ValidInput in file input.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="added UserInterface in pyatnashki.py, moved class ValidInput in file input.py" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="self.correct_matrix" language="Python" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
