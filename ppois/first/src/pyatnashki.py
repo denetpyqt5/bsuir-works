@@ -74,7 +74,7 @@ class UserInterface:
 
     def start_dialog(self):
         print("Game 'Fives' 3x3")
-        print("1.Start game\n2.Exit")
+        print("first.Start game\n2.Exit")
         info = ValidInput.valid_int_input(self, 1, 2, "Choose number: ")
         if info == 1:
             self.__game_start()

@@ -36,7 +36,7 @@ class MarkovNormalAlgorithms(Alphabet, Rules):
             return False
 
     def change_state(self):
-        print("Menu:\n1. Add data\n2. New data")
+        print("Menu:\nfirst. Add data\n2. New data")
         choose = ValidInput.valid_int_input(self, 1, 2, "Choose option: ")
         new = input("Input data: ")
         self.state = self.state[:-1] + new +'\n' if choose == 1 else new + '\n'
@@ -58,7 +58,7 @@ class UserInterface:
     def start_dialog(self):
         while True:
             print("""Choose option:
-1. convert state into final form
+first. convert state into final form
 2. change state
 3  check info
 4. exit""")
@@ -76,4 +76,5 @@ class UserInterface:
 if __name__ == "__main__":
     alg = MarkovNormalAlgorithms("DABCCBCCD", "A", "B", "C", A="B", B="C", C="@@", D="S")
     interface = UserInterface(alg)
+    print(interface.__doc__)
     interface.start_dialog()
