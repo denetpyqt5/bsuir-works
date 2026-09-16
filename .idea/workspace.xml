@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48c53310-d279-4359-8bbd-d77d1fd227f3" name="Changes" comment="added pytest">
-      <change beforePath="$PROJECT_DIR$/.idea/bsuir-works.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bsuir-works.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ppois/first/src/algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/first/src/algorithm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ppois/first/src/input.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/first/src/input.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ppois/first/src/pyatnashki.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/first/src/pyatnashki.py" afterDir="false" />
-    </list>
+    <list default="true" id="48c53310-d279-4359-8bbd-d77d1fd227f3" name="Changes" comment="added documentation with Sphinx" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -307,7 +300,15 @@
       <option name="project" value="LOCAL" />
       <updated>1789497325704</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="added documentation with Sphinx">
+      <option name="closed" value="true" />
+      <created>1789540422486</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1789540422486</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -373,7 +374,8 @@
     <MESSAGE value="fixed the issue with input.py." />
     <MESSAGE value="added src" />
     <MESSAGE value="added pytest" />
-    <option name="LAST_COMMIT_MESSAGE" value="added pytest" />
+    <MESSAGE value="added documentation with Sphinx" />
+    <option name="LAST_COMMIT_MESSAGE" value="added documentation with Sphinx" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
