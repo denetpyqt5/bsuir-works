@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="48c53310-d279-4359-8bbd-d77d1fd227f3" name="Changes" comment="rebuilt requirements.txt" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {}
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/denetpyqt5/bsuir-works.git&quot;,
+    &quot;accountId&quot;: &quot;2bbfa92e-def3-4ee6-82eb-a2ce8a1097f0&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/ppois/1/.venv/input.py" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="3IuQdI9VzOsDE2LL7HzU1LHBaFh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python tests.pytest for test_algorithm.test_algorithm.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_algorithm.test_change.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_input.test_input.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_input.test_parse.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_main.test_main.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_pyatnashki.test_move.executor&quot;: &quot;Run&quot;,
+    &quot;Python.algorithm.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pyatnashki.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;first-ppois&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/aieng/OneDrive/Desktop/AllPycharmProjects/bsuir-works&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aieng\OneDrive\Desktop\AllPycharmProjects\bsuir-works\ppois\first" />
+      <recent name="C:\Users\aieng\OneDrive\Desktop\AllPycharmProjects\bsuir-works\ppois\1" />
+      <recent name="C:\Users\aieng\OneDrive\Desktop\AllPycharmProjects\bsuir-works\ppois" />
+      <recent name="C:\Users\aieng\OneDrive\Desktop\AllPycharmProjects\bsuir-works\ppois\1\tests" />
+      <recent name="C:\Users\aieng\OneDrive\Desktop\AllPycharmProjects\bsuir-works\ppois\1\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.pytest for test_pyatnashki.test_move">
+    <configuration name="pytest for test_algorithm.test_algorithm" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="bsuir-works" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ppois/first/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_algorithm.test_algorithm&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_algorithm.test_change" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="bsuir-works" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ppois/first/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_algorithm.test_change&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_input.test_input" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="bsuir-works" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ppois/first/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_input.test_input&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_input.test_parse" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="bsuir-works" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ppois/first/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_input.test_parse&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_pyatnashki.test_move" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="bsuir-works" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ppois/first/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_pyatnashki.test_move&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.pytest for test_pyatnashki.test_move" />
+        <item itemvalue="Python tests.pytest for test_algorithm.test_change" />
+        <item itemvalue="Python tests.pytest for test_algorithm.test_algorithm" />
+        <item itemvalue="Python tests.pytest for test_input.test_parse" />
+        <item itemvalue="Python tests.pytest for test_input.test_input" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-e0ed3721d81e-36ea0e71a18c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.25410.159" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="48c53310-d279-4359-8bbd-d77d1fd227f3" name="Changes" comment="" />
+      <created>1788612059940</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1788612059940</updated>
+    </task>
+    <task id="LOCAL-00001" summary="add directory for ppois labs, create folder for first lab and empty file main.py">
+      <option name="closed" value="true" />
+      <created>1788615462233</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1788615462233</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add directory for ppois labs, create folder for first lab and empty file main.py">
+      <option name="closed" value="true" />
+      <created>1788615788332</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1788615788332</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added test code">
+      <option name="closed" value="true" />
+      <created>1788631483023</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1788631483023</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Adapted the project to the required version, implemented the base classes for the algorithm, and created an empty file for the second one.">
+      <option name="closed" value="true" />
+      <created>1788871096007</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1788871096007</updated>
+    </task>
+    <task id="LOCAL-00005" summary="made basic class in pyatnashki.py">
+      <option name="closed" value="true" />
+      <created>1788873430232</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1788873430232</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added main functional in algorithm.py for MarkovNormalAlgorithms">
+      <option name="closed" value="true" />
+      <created>1788888154241</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1788888154241</updated>
+    </task>
+    <task id="LOCAL-00007" summary="created functions _choose , _move, __bool__ and game_start, first working version">
+      <option name="closed" value="true" />
+      <created>1788957902408</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1788957902408</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added UserInterface in algorithm.py">
+      <option name="closed" value="true" />
+      <created>1789111304404</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1789111304404</updated>
+    </task>
+    <task id="LOCAL-00009" summary="added UserInterface in pyatnashki.py, moved class ValidInput in file input.py">
+      <option name="closed" value="true" />
+      <created>1789112987049</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1789112987049</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added proper game generation to eliminate impossible options,fixed the algorithm.py file, corrected minor details and brought both projects to a working version.">
+      <option name="closed" value="true" />
+      <created>1789210305179</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1789210305179</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added back input.py">
+      <option name="closed" value="true" />
+      <created>1789210481663</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1789210481663</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fixed the issue with input.py.">
+      <option name="closed" value="true" />
+      <created>1789210590180</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1789210590180</updated>
+    </task>
+    <task id="LOCAL-00013" summary="added src">
+      <option name="closed" value="true" />
+      <created>1789235466390</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1789235466390</updated>
+    </task>
+    <task id="LOCAL-00014" summary="added pytest">
+      <option name="closed" value="true" />
+      <created>1789497325704</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1789497325704</updated>
+    </task>
+    <task id="LOCAL-00015" summary="added documentation with Sphinx">
+      <option name="closed" value="true" />
+      <created>1789540422486</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1789540422486</updated>
+    </task>
+    <task id="LOCAL-00016" summary="rebuilt requirements.txt">
+      <option name="closed" value="true" />
+      <created>1789540551376</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1789540551376</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/first-ppois" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="main" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/first-ppois" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <MESSAGE value="add directory for ppois labs, create folder for first lab and empty file main.py" />
+    <MESSAGE value="added test code" />
+    <MESSAGE value="Adapted the project to the required version, implemented the base classes for the algorithm, and created an empty file for the second one." />
+    <MESSAGE value="made basic class in pyatnashki.py" />
+    <MESSAGE value="added main functional in algorithm.py for MarkovNormalAlgorithms" />
+    <MESSAGE value="created functions _choose , _move, __bool__ and game_start, first working version" />
+    <MESSAGE value="added UserInterface in algorithm.py" />
+    <MESSAGE value="added UserInterface in pyatnashki.py, moved class ValidInput in file input.py" />
+    <MESSAGE value="added proper game generation to eliminate impossible options,fixed the algorithm.py file, corrected minor details and brought both projects to a working version." />
+    <MESSAGE value="added back input.py" />
+    <MESSAGE value="fixed the issue with input.py." />
+    <MESSAGE value="added src" />
+    <MESSAGE value="added pytest" />
+    <MESSAGE value="added documentation with Sphinx" />
+    <MESSAGE value="rebuilt requirements.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="rebuilt requirements.txt" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="self.correct_matrix" language="Python" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
