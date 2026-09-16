@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48c53310-d279-4359-8bbd-d77d1fd227f3" name="Changes" comment="added src">
-      <change afterPath="$PROJECT_DIR$/ppois/first/pytest.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ppois/first/tests/test_algorithm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ppois/first/tests/test_input.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ppois/first/tests/test_pyatnashki.py" afterDir="false" />
+    <list default="true" id="48c53310-d279-4359-8bbd-d77d1fd227f3" name="Changes" comment="added pytest">
       <change beforePath="$PROJECT_DIR$/.idea/bsuir-works.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bsuir-works.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ppois/1/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/first/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ppois/1/src/algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/first/src/algorithm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ppois/1/src/input.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/first/src/input.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ppois/1/src/pyatnashki.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/first/src/pyatnashki.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ppois/first/src/algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/first/src/algorithm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ppois/first/src/input.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/first/src/input.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ppois/first/src/pyatnashki.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/first/src/pyatnashki.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,26 +55,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python tests.pytest for test_algorithm.test_algorithm.executor": "Run",
-    "Python tests.pytest for test_algorithm.test_change.executor": "Run",
-    "Python tests.pytest for test_input.test_input.executor": "Run",
-    "Python tests.pytest for test_input.test_parse.executor": "Run",
-    "Python tests.pytest for test_main.test_main.executor": "Run",
-    "Python tests.pytest for test_pyatnashki.test_move.executor": "Run",
-    "Python.algorithm.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.pyatnashki.executor": "Run",
-    "Python.test_main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "first-ppois",
-    "last_opened_file_path": "C:/Users/aieng/OneDrive/Desktop/AllPycharmProjects/bsuir-works",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python tests.pytest for test_algorithm.test_algorithm.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_algorithm.test_change.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_input.test_input.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_input.test_parse.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_main.test_main.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_pyatnashki.test_move.executor&quot;: &quot;Run&quot;,
+    &quot;Python.algorithm.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pyatnashki.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;first-ppois&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/aieng/OneDrive/Desktop/AllPycharmProjects/bsuir-works&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\aieng\OneDrive\Desktop\AllPycharmProjects\bsuir-works\ppois\1" />
@@ -304,7 +299,15 @@
       <option name="project" value="LOCAL" />
       <updated>1789235466390</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added pytest">
+      <option name="closed" value="true" />
+      <created>1789497325704</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1789497325704</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -369,7 +372,8 @@
     <MESSAGE value="added back input.py" />
     <MESSAGE value="fixed the issue with input.py." />
     <MESSAGE value="added src" />
-    <option name="LAST_COMMIT_MESSAGE" value="added src" />
+    <MESSAGE value="added pytest" />
+    <option name="LAST_COMMIT_MESSAGE" value="added pytest" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
