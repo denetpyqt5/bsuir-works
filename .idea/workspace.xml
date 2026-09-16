@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48c53310-d279-4359-8bbd-d77d1fd227f3" name="Changes" comment="added documentation with Sphinx" />
+    <list default="true" id="48c53310-d279-4359-8bbd-d77d1fd227f3" name="Changes" comment="rebuilt requirements.txt" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,11 +70,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aieng\OneDrive\Desktop\AllPycharmProjects\bsuir-works\ppois\first" />
       <recent name="C:\Users\aieng\OneDrive\Desktop\AllPycharmProjects\bsuir-works\ppois\1" />
       <recent name="C:\Users\aieng\OneDrive\Desktop\AllPycharmProjects\bsuir-works\ppois" />
       <recent name="C:\Users\aieng\OneDrive\Desktop\AllPycharmProjects\bsuir-works\ppois\1\tests" />
       <recent name="C:\Users\aieng\OneDrive\Desktop\AllPycharmProjects\bsuir-works\ppois\1\src" />
-      <recent name="C:\Users\aieng\OneDrive\Desktop\bsuir-works\ppois\1\.venv" />
     </key>
   </component>
   <component name="RunManager" selected="Python tests.pytest for test_pyatnashki.test_move">
@@ -308,7 +308,15 @@
       <option name="project" value="LOCAL" />
       <updated>1789540422486</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="rebuilt requirements.txt">
+      <option name="closed" value="true" />
+      <created>1789540551376</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1789540551376</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -375,7 +383,8 @@
     <MESSAGE value="added src" />
     <MESSAGE value="added pytest" />
     <MESSAGE value="added documentation with Sphinx" />
-    <option name="LAST_COMMIT_MESSAGE" value="added documentation with Sphinx" />
+    <MESSAGE value="rebuilt requirements.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="rebuilt requirements.txt" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
