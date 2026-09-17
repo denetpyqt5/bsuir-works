@@ -1,6 +1,6 @@
 import os
 import sys
-sys.path.insert(0, os.path.abspath('C:\\Users\\aieng\\OneDrive\\Desktop\\AllPycharmProjects\\bsuir-works\\ppois\\first\\src')) # Путь к папке с кодом
+sys.path.insert(0, os.path.abspath('C:\\Users\\aieng\\OneDrive\\Desktop\\AllPycharmProjects\\bsuir-works\\ppois\\first\\src'))
 
 # Configuration file for the Sphinx documentation builder.
 #

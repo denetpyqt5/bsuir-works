@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48c53310-d279-4359-8bbd-d77d1fd227f3" name="Changes" comment="rebuilt requirements.txt" />
+    <list default="true" id="48c53310-d279-4359-8bbd-d77d1fd227f3" name="Changes" comment="deleted docs/source">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ppois/first/source/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/first/source/conf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ppois/first/src/algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/first/src/algorithm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ppois/first/src/pyatnashki.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/first/src/pyatnashki.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ppois/first/tests/test_pyatnashki.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/first/tests/test_pyatnashki.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,26 +54,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python tests.pytest for test_algorithm.test_algorithm.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_algorithm.test_change.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_input.test_input.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_input.test_parse.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_main.test_main.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_pyatnashki.test_move.executor&quot;: &quot;Run&quot;,
-    &quot;Python.algorithm.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.pyatnashki.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;first-ppois&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/aieng/OneDrive/Desktop/AllPycharmProjects/bsuir-works&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.pytest for test_algorithm.test_algorithm.executor": "Run",
+    "Python tests.pytest for test_algorithm.test_change.executor": "Run",
+    "Python tests.pytest for test_input.test_input.executor": "Run",
+    "Python tests.pytest for test_input.test_parse.executor": "Run",
+    "Python tests.pytest for test_main.test_main.executor": "Run",
+    "Python tests.pytest for test_pyatnashki.test_move.executor": "Run",
+    "Python tests.pytest for test_pyatnashki.test_win_after_moves.executor": "Run",
+    "Python tests.pytest in test_pyatnashki.py.executor": "Run",
+    "Python.algorithm.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.pyatnashki.executor": "Run",
+    "Python.test_main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "first-ppois",
+    "last_opened_file_path": "C:/Users/aieng/OneDrive/Desktop/AllPycharmProjects/bsuir-works",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\aieng\OneDrive\Desktop\AllPycharmProjects\bsuir-works\ppois\first" />
@@ -77,7 +85,7 @@
       <recent name="C:\Users\aieng\OneDrive\Desktop\AllPycharmProjects\bsuir-works\ppois\1\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for test_pyatnashki.test_move">
+  <component name="RunManager" selected="Python tests.pytest for test_algorithm.test_change">
     <configuration name="pytest for test_algorithm.test_algorithm" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="bsuir-works" />
       <option name="ENV_FILES" value="" />
@@ -109,23 +117,6 @@
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_algorithm.test_change&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for test_input.test_input" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="bsuir-works" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ppois/first/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_input.test_input&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -163,13 +154,30 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest for test_pyatnashki.test_win_after_moves" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="bsuir-works" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ppois/first/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_pyatnashki.test_win_after_moves&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for test_pyatnashki.test_move" />
         <item itemvalue="Python tests.pytest for test_algorithm.test_change" />
-        <item itemvalue="Python tests.pytest for test_algorithm.test_algorithm" />
         <item itemvalue="Python tests.pytest for test_input.test_parse" />
-        <item itemvalue="Python tests.pytest for test_input.test_input" />
+        <item itemvalue="Python tests.pytest for test_pyatnashki.test_win_after_moves" />
+        <item itemvalue="Python tests.pytest for test_pyatnashki.test_move" />
+        <item itemvalue="Python tests.pytest for test_algorithm.test_algorithm" />
       </list>
     </recent_temporary>
   </component>
@@ -316,7 +324,15 @@
       <option name="project" value="LOCAL" />
       <updated>1789540551376</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="deleted docs/source">
+      <option name="closed" value="true" />
+      <created>1789540739036</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1789540739036</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -384,7 +400,8 @@
     <MESSAGE value="added pytest" />
     <MESSAGE value="added documentation with Sphinx" />
     <MESSAGE value="rebuilt requirements.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="rebuilt requirements.txt" />
+    <MESSAGE value="deleted docs/source" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted docs/source" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

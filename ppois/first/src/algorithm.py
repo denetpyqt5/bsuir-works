@@ -93,8 +93,8 @@ class MarkovNormalAlgorithms(Alphabet, Rules):
         Asks whether to append data to the current state or replace
         it entirely, then reads the new string.
         """
-        print("Menu:\nfirst. Add data\n2. New data")
-        choose = ValidInput.valid_int_input(self, 1, 2, "Choose option: ")
+        print("Menu:\n1. Add data\n2. New data")
+        choose = ValidInput().valid_int_input(1, 2, "Choose option: ")
         new = input("Input data: ")
         self.state = self.state[:-1] + new + '\n' if choose == 1 else new + '\n'
 
@@ -149,11 +149,11 @@ class UserInterface:
         """
         while True:
             print("""Choose option:
-first. convert state into final form
+1. convert state into final form
 2. change state
 3  check info
 4. exit""")
-            choose = ValidInput.valid_int_input(self, 1, 4, "Choose number: ")
+            choose = ValidInput().valid_int_input(1, 4, "Choose number: ")
             if choose == 1:
                 self.__algorithm.convert()
             elif choose == 2:

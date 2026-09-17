@@ -122,7 +122,7 @@ class UserInterface:
         """
         while not self.__five.__bool__():
             print(self.__five.__str__())
-            data = ValidInput.valid_int_input(self, 1, 9, "Enter number to switch: ")
+            data = ValidInput().valid_int_input(1, 9, "Enter number to switch: ")
             self.__five.choose(data)
         else:
             print("You win")
@@ -133,8 +133,8 @@ class UserInterface:
         Option ``1`` starts the game; any other valid option exits.
         """
         print("Game 'Fives' 3x3")
-        print("first.Start game\n2.Exit")
-        info = ValidInput.valid_int_input(self, 1, 2, "Choose number: ")
+        print("1.Start game\n2.Exit")
+        info = ValidInput().valid_int_input(1, 2, "Choose number: ")
         if info == 1:
             self.__game_start()
         else:
