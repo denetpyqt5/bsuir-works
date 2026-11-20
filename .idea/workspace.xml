@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48c53310-d279-4359-8bbd-d77d1fd227f3" name="Changes" comment="deleted docs/source">
+    <list default="true" id="48c53310-d279-4359-8bbd-d77d1fd227f3" name="Changes" comment="added first mois lab">
+      <change afterPath="$PROJECT_DIR$/ppois/first/src/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ppois/first/source/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/first/source/conf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ppois/first/src/algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/first/src/algorithm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ppois/first/src/pyatnashki.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/first/src/pyatnashki.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ppois/first/tests/test_pyatnashki.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppois/first/tests/test_pyatnashki.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,8 +68,8 @@
     "Python.test_main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "first-ppois",
-    "last_opened_file_path": "C:/Users/aieng/OneDrive/Desktop/AllPycharmProjects/bsuir-works",
+    "git-widget-placeholder": "ppois-second",
+    "last_opened_file_path": "C:/Users/aieng/OneDrive/Desktop/bsuir-works",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable"
   }
 }]]></component>
@@ -173,10 +170,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for test_algorithm.test_change" />
-        <item itemvalue="Python tests.pytest for test_input.test_parse" />
         <item itemvalue="Python tests.pytest for test_pyatnashki.test_win_after_moves" />
         <item itemvalue="Python tests.pytest for test_pyatnashki.test_move" />
+        <item itemvalue="Python tests.pytest for test_input.test_parse" />
+        <item itemvalue="Python tests.pytest for test_algorithm.test_change" />
         <item itemvalue="Python tests.pytest for test_algorithm.test_algorithm" />
       </list>
     </recent_temporary>
@@ -401,7 +398,8 @@
     <MESSAGE value="added documentation with Sphinx" />
     <MESSAGE value="rebuilt requirements.txt" />
     <MESSAGE value="deleted docs/source" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted docs/source" />
+    <MESSAGE value="added first mois lab" />
+    <option name="LAST_COMMIT_MESSAGE" value="added first mois lab" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
