@@ -1,0 +1,426 @@
+@prefix : <http://www.semanticweb.org/aieng/ontologies/2026/8/sed/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sed: <http://example.org/sed#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/aieng/ontologies/2026/8/sed/> .
+
+<http://www.semanticweb.org/aieng/ontologies/2026/8/sed> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/assignedTo
+:assignedTo rdf:type owl:ObjectProperty ;
+            rdfs:domain :Task ;
+            rdfs:range :Employee .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/belongsToDepartment
+:belongsToDepartment rdf:type owl:ObjectProperty ,
+                              owl:FunctionalProperty ;
+                     rdfs:domain :Employee ;
+                     rdfs:range :Department .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/followsRoute
+:followsRoute rdf:type owl:ObjectProperty ;
+              rdfs:domain :Document ;
+              rdfs:range :Route .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/forDocument
+:forDocument rdf:type owl:ObjectProperty ;
+             rdfs:domain :Task ;
+             rdfs:range :Document .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/fromCorrespondent
+:fromCorrespondent rdf:type owl:ObjectProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain :IncomingDocument ;
+                   rdfs:range :Correspondent .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/hasAuthor
+:hasAuthor rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Document ;
+           rdfs:range :Employee .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/hasRole
+:hasRole rdf:type owl:ObjectProperty ;
+         rdfs:domain :Employee ;
+         rdfs:range :Role .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/hasStatus
+:hasStatus rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Document ;
+           rdfs:range :Status .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/hasVersion
+:hasVersion rdf:type owl:ObjectProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :Document ;
+            rdfs:range :File .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/includesStep
+:includesStep rdf:type owl:ObjectProperty ,
+                       owl:TransitiveProperty ;
+              rdfs:domain :Route ;
+              rdfs:range :Employee .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/managedBy
+:managedBy rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty ,
+                    owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :Department ;
+           rdfs:range :Employee .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/signedBy
+:signedBy rdf:type owl:ObjectProperty ;
+          rdfs:domain :Document ;
+          rdfs:range :Employee .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/hasDate
+:hasDate rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Document ;
+         rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/hasDeadline
+:hasDeadline rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :Task ;
+             rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/hasDescription
+:hasDescription rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Document ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/hasEmail
+:hasEmail rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Employee ;
+          rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/hasRegNumber
+:hasRegNumber rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Document ;
+              rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/hasTitle
+:hasTitle rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Document ;
+          rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/hasVersionNumber
+:hasVersionNumber rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :File ;
+                  rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Correspondent
+:Correspondent rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Department
+:Department rdf:type owl:Class ;
+            rdfs:subClassOf :OrganizationalUnit .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Document
+:Document rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAuthor ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Employee
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasStatus ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Status
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDate ;
+                            owl:someValuesFrom xsd:dateTime
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasTitle ;
+                            owl:someValuesFrom xsd:string
+                          ] .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Employee
+:Employee rdf:type owl:Class ;
+          rdfs:subClassOf :Person ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasRole ;
+                            owl:someValuesFrom :Role
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :belongsToDepartment ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Department
+                          ] .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/File
+:File rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/HRDepartment
+:HRDepartment rdf:type owl:Class ;
+              rdfs:subClassOf :Department ;
+              owl:disjointWith :LegalDepartment .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/IncomingDocument
+:IncomingDocument rdf:type owl:Class ;
+                  rdfs:subClassOf :Document ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :fromCorrespondent ;
+                                    owl:someValuesFrom :Correspondent
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :fromCorrespondent ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :Correspondent
+                                  ] ;
+                  owl:disjointWith :InternalDocument ,
+                                   :OutgoingDocument .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/InternalDocument
+:InternalDocument rdf:type owl:Class ;
+                  rdfs:subClassOf :Document ;
+                  owl:disjointWith :OutgoingDocument .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/LegalDepartment
+:LegalDepartment rdf:type owl:Class ;
+                 rdfs:subClassOf :Department .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Manager
+:Manager rdf:type owl:Class ;
+         rdfs:subClassOf :Employee ;
+         owl:disjointWith :Specialist .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Memo
+:Memo rdf:type owl:Class ;
+      rdfs:subClassOf :InternalDocument .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Order
+:Order rdf:type owl:Class ;
+       rdfs:subClassOf :InternalDocument ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :signedBy ;
+                         owl:someValuesFrom :Manager
+                       ] .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/OrganizationalUnit
+:OrganizationalUnit rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/OutgoingDocument
+:OutgoingDocument rdf:type owl:Class ;
+                  rdfs:subClassOf :Document .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Person
+:Person rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Role
+:Role rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Route
+:Route rdf:type owl:Class ;
+       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                         owl:onProperty :includesStep ;
+                         owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Employee
+                       ] .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Specialist
+:Specialist rdf:type owl:Class ;
+            rdfs:subClassOf :Employee .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Status
+:Status rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Task
+:Task rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :assignedTo ;
+                        owl:someValuesFrom :Employee
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :forDocument ;
+                        owl:someValuesFrom :Document
+                      ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Corp_Romashka
+:Corp_Romashka rdf:type owl:NamedIndividual ,
+                        :Correspondent .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Dept_HR
+:Dept_HR rdf:type owl:NamedIndividual ,
+                  :HRDepartment .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Dept_Legal
+:Dept_Legal rdf:type owl:NamedIndividual ,
+                     :LegalDepartment .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Doc_AnswerTax
+:Doc_AnswerTax rdf:type owl:NamedIndividual ,
+                        :OutgoingDocument ;
+               :hasStatus :Status_Draft ;
+               :hasDate "2024-03-22" ;
+               :hasRegNumber "Исх-58" ;
+               :hasTitle "Ответ в налоговую" .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Doc_LetterRomashka
+:Doc_LetterRomashka rdf:type owl:NamedIndividual ,
+                             :IncomingDocument ;
+                    :fromCorrespondent :Corp_Romashka ;
+                    :hasAuthor :Status_Approved ;
+                    :hasDate "2024-03-20" ;
+                    :hasRegNumber "Вх-104" ;
+                    :hasTitle "Письмо от ООО Ромашка" .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Doc_Memo5
+:Doc_Memo5 rdf:type owl:NamedIndividual ,
+                    :Memo ;
+           :hasAuthor :Emp_Olga ,
+                      :Status_Draft ;
+           :hasDate "2024-03-23" ;
+           :hasTitle "Служебная записка №5" .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Doc_Order12
+:Doc_Order12 rdf:type owl:NamedIndividual ,
+                      :Order ;
+             :hasAuthor :Emp_Ivan ,
+                        :Status_Approved ;
+             :hasDate "2024-03-15" ;
+             :hasRegNumber "12-К" ;
+             :hasTitle "Приказ №12 о приёме на работу" .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Emp_Ivan
+:Emp_Ivan rdf:type owl:NamedIndividual ,
+                   :Manager ;
+          :belongsToDepartment :Dept_HR ;
+          :hasRole :Role_Lawyer .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Emp_Maria
+:Emp_Maria rdf:type owl:NamedIndividual ,
+                    :Specialist ;
+           :belongsToDepartment :Dept_Legal ;
+           :hasRole :Role_Lawyer .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Emp_Olga
+:Emp_Olga rdf:type owl:NamedIndividual ,
+                   :Specialist ;
+          :belongsToDepartment :Role_Lawyer .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/File_Order_v1
+:File_Order_v1 rdf:type owl:NamedIndividual ,
+                        :File .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Role_Lawyer
+:Role_Lawyer rdf:type owl:NamedIndividual ,
+                      :Role .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Role_Manager
+:Role_Manager rdf:type owl:NamedIndividual ,
+                       :Role .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Route_Contract
+:Route_Contract rdf:type owl:NamedIndividual ,
+                         :Route ;
+                :includesStep :Emp_Ivan ,
+                              :Emp_Maria .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Status_Approved
+:Status_Approved rdf:type owl:NamedIndividual ,
+                          :Status .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Status_Draft
+:Status_Draft rdf:type owl:NamedIndividual ,
+                       :Status .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Status_OnApproval
+:Status_OnApproval rdf:type owl:NamedIndividual ,
+                            :Status .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Task_Approve
+:Task_Approve rdf:type owl:NamedIndividual ,
+                       :Task ;
+              :assignedTo :Emp_Maria ;
+              :forDocument :Doc_LetterRomashka ;
+              :hasDeadline "2024-03-25" .
+
+
+###  http://www.semanticweb.org/aieng/ontologies/2026/8/sed/Task_Read
+:Task_Read rdf:type owl:NamedIndividual ,
+                    :Task ;
+           :assignedTo :Emp_Ivan ;
+           :forDocument :Doc_Order12 .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
