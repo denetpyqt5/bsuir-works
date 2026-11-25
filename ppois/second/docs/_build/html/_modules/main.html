@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>main &#8212; ppois-second  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for main</h1><div class="highlight"><pre>
+<div class="viewcode-block" id="Person">
+<a class="viewcode-back" href="../index.html#main.Person">[docs]</a>
+<span></span><span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Base class representing a human.</span>
+
+<span class="sd">    Demonstrates encapsulation using a private (mangled) attribute.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Initialize a Person instance.</span>
+
+<span class="sd">        :param name: The full name of the person.</span>
+<span class="sd">        :type name: str</span>
+<span class="sd">        """</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__name</span> <span class="o">=</span> <span class="n">name</span>
+
+<div class="viewcode-block" id="Person.get_name">
+<a class="viewcode-back" href="../index.html#main.Person.get_name">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Retrieve the person's name.</span>
+
+<span class="sd">        :return: The name of the person.</span>
+<span class="sd">        :rtype: str</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__name</span></div>
+
+
+<div class="viewcode-block" id="Person.introduce">
+<a class="viewcode-back" href="../index.html#main.Person.introduce">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">introduce</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Generate an introduction string.</span>
+
+<span class="sd">        :return: A formatted introduction string.</span>
+<span class="sd">        :rtype: str</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"Меня зовут </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">__name</span><span class="si">}</span><span class="s2">."</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Employee">
+<a class="viewcode-back" href="../index.html#main.Employee">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Employee</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Class representing an employee, inheriting from Person.</span>
+
+<span class="sd">    Demonstrates public inheritance and a protected method.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">salary</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Initialize an Employee instance.</span>
+
+<span class="sd">        :param name: The full name of the employee.</span>
+<span class="sd">        :type name: str</span>
+<span class="sd">        :param salary: The monthly salary of the employee.</span>
+<span class="sd">        :type salary: float</span>
+<span class="sd">        """</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">salary</span> <span class="o">=</span> <span class="n">salary</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_calculate_bonus</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Calculate the employee's bonus (protected method).</span>
+
+<span class="sd">        :return: The calculated bonus amount.</span>
+<span class="sd">        :rtype: float</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">salary</span> <span class="o">*</span> <span class="mf">0.1</span>
+
+<div class="viewcode-block" id="Employee.get_info">
+<a class="viewcode-back" href="../index.html#main.Employee.get_info">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Retrieve employee information.</span>
+
+<span class="sd">        :return: A formatted string with employee details.</span>
+<span class="sd">        :rtype: str</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"Сотрудник: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_name</span><span class="p">()</span><span class="si">}</span><span class="s2">, ЗП: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">salary</span><span class="si">}</span><span class="s2">"</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Client">
+<a class="viewcode-back" href="../index.html#main.Client">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Client</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Class representing a client, inheriting from Person.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">budget</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Initialize a Client instance.</span>
+
+<span class="sd">        :param name: The full name of the client.</span>
+<span class="sd">        :type name: str</span>
+<span class="sd">        :param budget: The client's available budget.</span>
+<span class="sd">        :type budget: float</span>
+<span class="sd">        """</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">budget</span> <span class="o">=</span> <span class="n">budget</span></div>
+
+
+
+<div class="viewcode-block" id="TourGuide">
+<a class="viewcode-back" href="../index.html#main.TourGuide">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">TourGuide</span><span class="p">(</span><span class="n">Employee</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Class representing a tour guide.</span>
+
+<span class="sd">    Demonstrates method overriding (equivalent to virtual methods in C++).</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">salary</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">languages</span><span class="p">:</span> <span class="nb">list</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Initialize a TourGuide instance.</span>
+
+<span class="sd">        :param name: The full name of the guide.</span>
+<span class="sd">        :type name: str</span>
+<span class="sd">        :param salary: The monthly salary of the guide.</span>
+<span class="sd">        :type salary: float</span>
+<span class="sd">        :param languages: A list of languages spoken by the guide.</span>
+<span class="sd">        :type languages: list</span>
+<span class="sd">        """</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">salary</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">languages</span> <span class="o">=</span> <span class="n">languages</span>
+
+<div class="viewcode-block" id="TourGuide.work">
+<a class="viewcode-back" href="../index.html#main.TourGuide.work">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">work</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Simulate the guide performing their work.</span>
+
+<span class="sd">        :return: A description of the guide's activity.</span>
+<span class="sd">        :rtype: str</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"Гид </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_name</span><span class="p">()</span><span class="si">}</span><span class="s2"> проводит экскурсию."</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Manager">
+<a class="viewcode-back" href="../index.html#main.Manager">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Manager</span><span class="p">(</span><span class="n">Employee</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Class representing a manager.</span>
+
+<span class="sd">    Demonstrates method overriding.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">salary</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">department</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Initialize a Manager instance.</span>
+
+<span class="sd">        :param name: The full name of the manager.</span>
+<span class="sd">        :type name: str</span>
+<span class="sd">        :param salary: The monthly salary of the manager.</span>
+<span class="sd">        :type salary: float</span>
+<span class="sd">        :param department: The department managed by this manager.</span>
+<span class="sd">        :type department: str</span>
+<span class="sd">        """</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">salary</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">department</span> <span class="o">=</span> <span class="n">department</span>
+
+<div class="viewcode-block" id="Manager.work">
+<a class="viewcode-back" href="../index.html#main.Manager.work">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">work</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Simulate the manager performing their work.</span>
+
+<span class="sd">        :return: A description of the manager's activity.</span>
+<span class="sd">        :rtype: str</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"Менеджер </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_name</span><span class="p">()</span><span class="si">}</span><span class="s2"> управляет отделом </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">department</span><span class="si">}</span><span class="s2">."</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="TourGuideManager">
+<a class="viewcode-back" href="../index.html#main.TourGuideManager">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">TourGuideManager</span><span class="p">(</span><span class="n">TourGuide</span><span class="p">,</span> <span class="n">Manager</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Class combining the roles of a tour guide and a manager.</span>
+
+<span class="sd">    Demonstrates multiple inheritance.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">salary</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">languages</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">department</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Initialize a TourGuideManager instance.</span>
+
+<span class="sd">        :param name: The full name of the employee.</span>
+<span class="sd">        :type name: str</span>
+<span class="sd">        :param salary: The monthly salary of the employee.</span>
+<span class="sd">        :type salary: float</span>
+<span class="sd">        :param languages: A list of languages spoken by the employee.</span>
+<span class="sd">        :type languages: list</span>
+<span class="sd">        :param department: The department managed by the employee.</span>
+<span class="sd">        :type department: str</span>
+<span class="sd">        """</span>
+        <span class="n">TourGuide</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">salary</span><span class="p">,</span> <span class="n">languages</span><span class="p">)</span>
+        <span class="n">Manager</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">salary</span><span class="p">,</span> <span class="n">department</span><span class="p">)</span>
+
+<div class="viewcode-block" id="TourGuideManager.work">
+<a class="viewcode-back" href="../index.html#main.TourGuideManager.work">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">work</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Simulate the combined work of a guide and a manager.</span>
+
+<span class="sd">        :return: A description of the combined activity.</span>
+<span class="sd">        :rtype: str</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"Старший гид-менеджер </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_name</span><span class="p">()</span><span class="si">}</span><span class="s2"> совмещает роли."</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Transport">
+<a class="viewcode-back" href="../index.html#main.Transport">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Transport</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Base class representing a transport vehicle.</span>
+
+<span class="sd">    Participates in the diamond inheritance structure.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">capacity</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Initialize a Transport instance.</span>
+
+<span class="sd">        :param capacity: The maximum passenger capacity.</span>
+<span class="sd">        :type capacity: int</span>
+<span class="sd">        """</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">capacity</span> <span class="o">=</span> <span class="n">capacity</span></div>
+
+
+
+<div class="viewcode-block" id="Bus">
+<a class="viewcode-back" href="../index.html#main.Bus">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Bus</span><span class="p">(</span><span class="n">Transport</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Class representing a bus, inheriting from Transport.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">capacity</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">route</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Initialize a Bus instance.</span>
+
+<span class="sd">        :param capacity: The maximum passenger capacity.</span>
+<span class="sd">        :type capacity: int</span>
+<span class="sd">        :param route: The bus route description.</span>
+<span class="sd">        :type route: str</span>
+<span class="sd">        """</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">capacity</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">route</span> <span class="o">=</span> <span class="n">route</span></div>
+
+
+
+<div class="viewcode-block" id="Airplane">
+<a class="viewcode-back" href="../index.html#main.Airplane">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Airplane</span><span class="p">(</span><span class="n">Transport</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Class representing an airplane, inheriting from Transport.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">capacity</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">airline</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Initialize an Airplane instance.</span>
+
+<span class="sd">        :param capacity: The maximum passenger capacity.</span>
+<span class="sd">        :type capacity: int</span>
+<span class="sd">        :param airline: The name of the airline.</span>
+<span class="sd">        :type airline: str</span>
+<span class="sd">        """</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">capacity</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">airline</span> <span class="o">=</span> <span class="n">airline</span></div>
+
+
+
+<div class="viewcode-block" id="TransferTour">
+<a class="viewcode-back" href="../index.html#main.TransferTour">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">TransferTour</span><span class="p">(</span><span class="n">Bus</span><span class="p">,</span> <span class="n">Airplane</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Class representing a combined tour (bus + airplane).</span>
+
+<span class="sd">    Demonstrates diamond inheritance. Python resolves the duplicate base class</span>
+<span class="sd">    issue automatically via MRO (Method Resolution Order), mimicking C++ virtual inheritance.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">capacity</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">route</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">airline</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Initialize a TransferTour instance.</span>
+
+<span class="sd">        :param capacity: The maximum passenger capacity.</span>
+<span class="sd">        :type capacity: int</span>
+<span class="sd">        :param route: The bus route description.</span>
+<span class="sd">        :type route: str</span>
+<span class="sd">        :param airline: The name of the airline.</span>
+<span class="sd">        :type airline: str</span>
+<span class="sd">        """</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">capacity</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">route</span> <span class="o">=</span> <span class="n">route</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">airline</span> <span class="o">=</span> <span class="n">airline</span></div>
+
+
+
+<div class="viewcode-block" id="MultiRoleEmployee">
+<a class="viewcode-back" href="../index.html#main.MultiRoleEmployee">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">MultiRoleEmployee</span><span class="p">(</span><span class="n">TourGuide</span><span class="p">,</span> <span class="n">Manager</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Class representing an employee with two distinct roles.</span>
+
+<span class="sd">    Demonstrates explicit name resolution, analogous to the C++ using-declaration.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">salary</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">languages</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">department</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Initialize a MultiRoleEmployee instance.</span>
+
+<span class="sd">        :param name: The full name of the employee.</span>
+<span class="sd">        :type name: str</span>
+<span class="sd">        :param salary: The monthly salary of the employee.</span>
+<span class="sd">        :type salary: float</span>
+<span class="sd">        :param languages: A list of languages spoken by the employee.</span>
+<span class="sd">        :type languages: list</span>
+<span class="sd">        :param department: The department managed by the employee.</span>
+<span class="sd">        :type department: str</span>
+<span class="sd">        """</span>
+        <span class="n">TourGuide</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">salary</span><span class="p">,</span> <span class="n">languages</span><span class="p">)</span>
+        <span class="n">Manager</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">salary</span><span class="p">,</span> <span class="n">department</span><span class="p">)</span>
+
+<div class="viewcode-block" id="MultiRoleEmployee.work">
+<a class="viewcode-back" href="../index.html#main.MultiRoleEmployee.work">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">work</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Explicitly call methods from both parent classes.</span>
+
+<span class="sd">        :return: A combined description of both roles.</span>
+<span class="sd">        :rtype: str</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="n">TourGuide</span><span class="o">.</span><span class="n">work</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" И "</span> <span class="o">+</span> <span class="n">Manager</span><span class="o">.</span><span class="n">work</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+</div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"--- Тест 1: Базовые классы и закрытое поле ---"</span><span class="p">)</span>
+    <span class="n">person</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">"Иван"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">introduce</span><span class="p">())</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">--- Тест 2: Виртуальные методы (Полиморфизм) ---"</span><span class="p">)</span>
+    <span class="n">guide</span> <span class="o">=</span> <span class="n">TourGuide</span><span class="p">(</span><span class="s2">"Анна"</span><span class="p">,</span> <span class="mi">50000</span><span class="p">,</span> <span class="p">[</span><span class="s2">"EN"</span><span class="p">,</span> <span class="s2">"FR"</span><span class="p">])</span>
+    <span class="n">manager</span> <span class="o">=</span> <span class="n">Manager</span><span class="p">(</span><span class="s2">"Олег"</span><span class="p">,</span> <span class="mi">80000</span><span class="p">,</span> <span class="s2">"Туры"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">guide</span><span class="o">.</span><span class="n">work</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">manager</span><span class="o">.</span><span class="n">work</span><span class="p">())</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">--- Тест 3: Множественное наследование ---"</span><span class="p">)</span>
+    <span class="n">tgm</span> <span class="o">=</span> <span class="n">TourGuideManager</span><span class="p">(</span><span class="s2">"Елена"</span><span class="p">,</span> <span class="mi">100000</span><span class="p">,</span> <span class="p">[</span><span class="s2">"DE"</span><span class="p">],</span> <span class="s2">"Экскурсии"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tgm</span><span class="o">.</span><span class="n">work</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Языки: </span><span class="si">{</span><span class="n">tgm</span><span class="o">.</span><span class="n">languages</span><span class="si">}</span><span class="s2">, Отдел: </span><span class="si">{</span><span class="n">tgm</span><span class="o">.</span><span class="n">department</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">--- Тест 4: Виртуальное наследование (Ромб) ---"</span><span class="p">)</span>
+    <span class="n">transfer</span> <span class="o">=</span> <span class="n">TransferTour</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="s2">"Москва-Сочи"</span><span class="p">,</span> <span class="s2">"Аэрофлот"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"Вместимость: </span><span class="si">{</span><span class="n">transfer</span><span class="o">.</span><span class="n">capacity</span><span class="si">}</span><span class="s2">, Маршрут: </span><span class="si">{</span><span class="n">transfer</span><span class="o">.</span><span class="n">route</span><span class="si">}</span><span class="s2">, Авиакомпания: </span><span class="si">{</span><span class="n">transfer</span><span class="o">.</span><span class="n">airline</span><span class="si">}</span><span class="s2">"</span>
+    <span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">--- Тест 5: Разрешение имен (using-директива) ---"</span><span class="p">)</span>
+    <span class="n">multi</span> <span class="o">=</span> <span class="n">MultiRoleEmployee</span><span class="p">(</span><span class="s2">"Сергей"</span><span class="p">,</span> <span class="mi">70000</span><span class="p">,</span> <span class="p">[</span><span class="s2">"ES"</span><span class="p">],</span> <span class="s2">"Продажи"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">multi</span><span class="o">.</span><span class="n">work</span><span class="p">())</span>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">ppois-second</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, denetpyqt5.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.2.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

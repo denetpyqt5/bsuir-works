@@ -1,17 +1,16 @@
 from input import ValidInput
 
-
 # Нормальные алгоритмы Маркова
 
 
 class Alphabet:
     """Stores the alphabet of a normal Markov algorithm.
 
-        The alphabet is the set of symbols that may appear in the state
-        string and in the substitution rules.
+    The alphabet is the set of symbols that may appear in the state
+    string and in the substitution rules.
 
-        :param args: alphabet symbols passed positionally
-        """
+    :param args: alphabet symbols passed positionally
+    """
 
     def __init__(self, *args, **kwargs):
         """Initialize the alphabet with the given symbols.
@@ -30,6 +29,7 @@ class Rules:
     symbol to look for in the state string, and the value is what it
     is replaced with.
     """
+
     def __init__(self, **kwargs):
         self._rules: dict = kwargs
         super().__init__()
@@ -48,6 +48,7 @@ class MarkovNormalAlgorithms(Alphabet, Rules):
                                      A="B", B="C", C="@@", D="S")
         UserInterface(alg).start_dialog()
     """
+
     def __init__(self, state: str, *args, **kwargs):
         """Create an algorithm with the given initial state.
 
@@ -55,7 +56,7 @@ class MarkovNormalAlgorithms(Alphabet, Rules):
         :param args: alphabet symbols (positional)
         :param kwargs: substitution rules in the form ``symbol=replacement``
         """
-        self.state = state + '\n'
+        self.state = state + "\n"
         super().__init__(*args, **kwargs)
 
     def __str__(self) -> str:
@@ -63,9 +64,11 @@ class MarkovNormalAlgorithms(Alphabet, Rules):
 
         :return: a string with the current state, alphabet, and rules
         """
-        return (f"state: {self.state[:-1]},"
-                f" alphabet of algorithm: {self._symbols},"
-                f" rules: {self._rules}")
+        return (
+            f"state: {self.state[:-1]},"
+            f" alphabet of algorithm: {self._symbols},"
+            f" rules: {self._rules}"
+        )
 
     def _change(self, i: int):
         """Apply a rule to the symbol at position ``i``.
@@ -81,7 +84,7 @@ class MarkovNormalAlgorithms(Alphabet, Rules):
         try:
             result = list(self.state)
             result[i] = self._rules[self.state[i]]
-            self.state = ''.join(result)
+            self.state = "".join(result)
             print(self.state[:-1])
             return self.state
         except Exception:
@@ -96,7 +99,7 @@ class MarkovNormalAlgorithms(Alphabet, Rules):
         print("Menu:\n1. Add data\n2. New data")
         choose = ValidInput().valid_int_input(1, 2, "Choose option: ")
         new = input("Input data: ")
-        self.state = self.state[:-1] + new + '\n' if choose == 1 else new + '\n'
+        self.state = self.state[:-1] + new + "\n" if choose == 1 else new + "\n"
 
     def convert(self):
         """Apply the rules for as long as possible.
@@ -109,7 +112,7 @@ class MarkovNormalAlgorithms(Alphabet, Rules):
         Stops when the terminating ``'\\n'`` character is reached.
         """
         i = 0
-        while self.state[i] != '\n':
+        while self.state[i] != "\n":
             if not self._change(i):
                 i += 1
 
@@ -120,6 +123,7 @@ class UserInterface:
     Allows the user to run the conversion, change the state, and
     view the current information about the algorithm.
     """
+
     def __init__(self, algorithm: MarkovNormalAlgorithms):
         """Create an interface for the given algorithm.
 
@@ -165,7 +169,9 @@ class UserInterface:
 
 
 if __name__ == "__main__":
-    alg = MarkovNormalAlgorithms("DABCCBCCD", "A", "B", "C", A="B", B="C", C="@@", D="S")
+    alg = MarkovNormalAlgorithms(
+        "DABCCBCCD", "A", "B", "C", A="B", B="C", C="@@", D="S"
+    )
     interface = UserInterface(alg)
     print(interface.__doc__)
     interface.start_dialog()

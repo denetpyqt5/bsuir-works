@@ -1,8 +1,9 @@
 import random
+
 from input import ValidInput
 
-
 # Пятнашки
+
 
 class Fives:
     """A 3x3 sliding puzzle board.
@@ -53,10 +54,9 @@ class Fives:
 
         # Вертикальные соседи
         if line == 2:
-            ready_to_move.extend([
-                self.current_matrix[index - 3],
-                self.current_matrix[index + 3]
-            ])
+            ready_to_move.extend(
+                [self.current_matrix[index - 3], self.current_matrix[index + 3]]
+            )
         elif line == 1:
             ready_to_move.append(self.current_matrix[index + 3])
         else:
@@ -66,10 +66,9 @@ class Fives:
         if (index + 1) % 3 == 0:
             ready_to_move.append(self.current_matrix[index - 1])
         elif (index + 2) % 3 == 0:
-            ready_to_move.extend([
-                self.current_matrix[index - 1],
-                self.current_matrix[index + 1]
-            ])
+            ready_to_move.extend(
+                [self.current_matrix[index - 1], self.current_matrix[index + 1]]
+            )
         else:
             ready_to_move.append(self.current_matrix[index + 1])
         return ready_to_move
@@ -124,8 +123,7 @@ class UserInterface:
             print(self.__five.__str__())
             data = ValidInput().valid_int_input(1, 9, "Enter number to switch: ")
             self.__five.choose(data)
-        else:
-            print("You win")
+        print("You win")
 
     def start_dialog(self):
         """Show the start menu and run or exit the game.

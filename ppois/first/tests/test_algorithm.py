@@ -1,5 +1,7 @@
-from ppois.first.src.algorithm import  MarkovNormalAlgorithms
 import pytest
+
+from ppois.first.src.algorithm import MarkovNormalAlgorithms
+
 
 @pytest.mark.parametrize(
     "state, rules, index, expected",
