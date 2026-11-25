@@ -5,6 +5,7 @@ class ValidInput:
     parses as an integer and falls within the inclusive range
     ``[left, right]``. Invalid entries trigger a message and a retry.
     """
+
     def _is_valid(self, data, left, right):
         """Check whether a value is an integer within the given range.
 
