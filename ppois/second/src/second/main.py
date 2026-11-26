@@ -4,72 +4,68 @@ from enum import Enum
 
 class TourCompanyException(Exception):
     """Base exception for the whole system."""
-    pass
+
 
 
 class TransportException(TourCompanyException):
     """Problems with transport (cancelled flight, breakdown)."""
-    pass
+
 
 
 class InsufficientFundsException(TourCompanyException):
     """Client does not have enough money."""
-    pass
+
 
 
 class InvalidClientDataException(TourCompanyException):
     """Incorrect client data (age, passport)."""
-    pass
+
 
 
 class BookingNotFoundException(TourCompanyException):
     """Booking not found in the database."""
-    pass
+
 
 
 class InvalidBookingDataException(TourCompanyException):
     """Incorrect booking data (date in the past, etc.)."""
-    pass
+
 
 
 class InvalidBaggageDataException(TourCompanyException):
     """Problems with baggage data (forbidden items)."""
-    pass
+
 
 
 class BaggageOverweightException(TourCompanyException):
     """Exceeded baggage weight limit."""
-    pass
+
 
 
 class VehicleOverloadException(TourCompanyException):
     """Transport is overloaded (more people than seats)."""
-    pass
+
 
 
 class VehicleNotAvailableException(TourCompanyException):
     """Transport is unavailable (under repair, booked)."""
-    pass
+
 
 
 class GuideNotAvailableException(TourCompanyException):
     """Guide is unavailable (busy, sick)."""
-    pass
+
 
 
 class InvalidVisaException(TourCompanyException):
     """Visa problems (missing, expired)."""
-    pass
+
 
 
 class HotelFullyBookedException(TourCompanyException):
     """Hotel is fully booked."""
-    pass
 
 
-# ==========================================
-# 2. ENUMS (Перечисления для удобства)
-# ==========================================
 
 class TransportType(Enum):
     BUS = "Автобус"
@@ -127,7 +123,9 @@ class Client(Person):
 
     def pay(self, amount: float):
         if amount > self.budget:
-            raise InsufficientFundsException(f"Не хватает {amount - self.budget} средств.")
+            raise InsufficientFundsException(
+                f"Не хватает {amount - self.budget} средств."
+            )
         self.budget -= amount
 
 
@@ -160,7 +158,9 @@ class TourGuideManager(TourGuide, Manager):
     """Class combining the roles of a guide and a manager."""
 
     def __init__(self, name: str, salary: float, languages: list, department: str):
-        super().__init__(name=name, salary=salary, languages=languages, department=department)
+        super().__init__(
+            name=name, salary=salary, languages=languages, department=department
+        )
 
     def work(self) -> str:
         return f"Старший гид-менеджер {self.get_name()} совмещает роли."
@@ -170,10 +170,13 @@ class MultiRoleEmployee(TourGuide, Manager):
     """Class explicitly resolving method names from both parents."""
 
     def __init__(self, name: str, salary: float, languages: list, department: str):
-        super().__init__(name=name, salary=salary, languages=languages, department=department)
+        super().__init__(
+            name=name, salary=salary, languages=languages, department=department
+        )
 
     def work(self) -> str:
         return TourGuide.work(self) + " И " + Manager.work(self)
+
 
 class Transport:
     """Base class representing a transport vehicle."""
@@ -255,7 +258,6 @@ class Attraction:
         self.ticket_price = ticket_price
 
 
-
 class Room:
     def __init__(self, room_number: str, room_type: RoomType, price_per_night: float):
         self.room_number = room_number
@@ -294,10 +296,6 @@ class Apartment(Hotel):
         super().__init__(name, city, stars)
         self.owner_name = owner_name
 
-
-# ==========================================
-# 8. ТУРЫ И ЭКСКУРСИИ
-# ==========================================
 
 class Excursion:
     def __init__(self, name: str, price: float, attraction: Attraction):
@@ -352,7 +350,9 @@ class Invoice:
 
 
 class Passport:
-    def __init__(self, number: str, issue_date: datetime.date, expiry_date: datetime.date):
+    def __init__(
+        self, number: str, issue_date: datetime.date, expiry_date: datetime.date
+    ):
         self.number = number
         self.issue_date = issue_date
         self.expiry_date = expiry_date
@@ -415,7 +415,6 @@ class Complaint:
 
     def resolve(self):
         self.is_resolved = True
-
 
 
 class Agency:

@@ -1,33 +1,33 @@
 import pytest
-from second.main import (
-    Person,
-    Employee,
-    Client,
-    TourGuide,
-    Manager,
-    TourGuideManager,
-    Transport,
-    Bus,
+
+from ppois.second.src.second.main import (
     Airplane,
-    TransferTour,
-    MultiRoleEmployee,
-    Country,
-    City,
-    Resort,
-    Hotel,
-    Room,
-    Tour,
     Booking,
-    InsufficientFundsException,
-    VehicleOverloadException,
-    HotelFullyBookedException,
+    Bus,
+    City,
+    Client,
+    Country,
+    Employee,
     GuideNotAvailableException,
+    Hotel,
+    HotelFullyBookedException,
+    InsufficientFundsException,
+    Manager,
+    MultiRoleEmployee,
+    Person,
+    Resort,
+    Room,
     RoomType,
+    Tour,
+    TourGuide,
+    TourGuideManager,
+    TransferTour,
+    Transport,
+    VehicleOverloadException,
 )
 
 
 class TestPerson:
-
     def test_get_name(self):
         person = Person("Иван")
         assert person.get_name() == "Иван"
@@ -43,7 +43,6 @@ class TestPerson:
 
 
 class TestEmployee:
-
     def test_initialization(self):
         emp = Employee("Петр", 50000)
         assert emp.get_name() == "Петр"
@@ -59,7 +58,6 @@ class TestEmployee:
 
 
 class TestClient:
-
     def test_initialization(self):
         client = Client("Ольга", 100000)
         assert client.get_name() == "Ольга"
@@ -77,7 +75,6 @@ class TestClient:
 
 
 class TestVirtualMethods:
-
     def test_tour_guide_work(self):
         guide = TourGuide("Анна", 50000, ["EN", "FR"])
         assert guide.work() == "Гид Анна проводит экскурсию."
@@ -103,7 +100,6 @@ class TestVirtualMethods:
 
 
 class TestMultipleInheritance:
-
     def test_initialization(self):
         tgm = TourGuideManager("Елена", 100000, ["DE"], "Экскурсии")
         assert tgm.get_name() == "Елена"
@@ -123,7 +119,6 @@ class TestMultipleInheritance:
 
 
 class TestVirtualInheritance:
-
     def test_transfer_tour_initialization(self):
         tour = TransferTour(50, "Москва-Сочи", "Аэрофлот")
         assert tour.capacity == 50
@@ -146,7 +141,6 @@ class TestVirtualInheritance:
 
 
 class TestNameResolution:
-
     def test_explicit_method_resolution(self):
         multi = MultiRoleEmployee("Сергей", 70000, ["ES"], "Продажи")
         expected = (
@@ -167,7 +161,6 @@ class TestNameResolution:
 
 
 class TestTransport:
-
     def test_book_seat_success(self):
         bus = Bus(50, "Москва-Сочи")
         bus.book_seat(5)
@@ -181,7 +174,6 @@ class TestTransport:
 
 
 class TestHotel:
-
     def test_room_booking(self):
         hotel = Hotel("Rixos", City("Анталья", Country("Турция", False)), 5)
         room = Room("101", RoomType.LUXURY, 15000)
@@ -201,7 +193,6 @@ class TestHotel:
 
 
 class TestBooking:
-
     def test_confirm_booking(self):
         client = Client("Иван", 150000)
         manager = Manager("Олег", 80000, "Продажи")
