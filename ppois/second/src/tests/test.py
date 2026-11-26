@@ -11,6 +11,18 @@ from second.main import (
     Airplane,
     TransferTour,
     MultiRoleEmployee,
+    Country,
+    City,
+    Resort,
+    Hotel,
+    Room,
+    Tour,
+    Booking,
+    InsufficientFundsException,
+    VehicleOverloadException,
+    HotelFullyBookedException,
+    GuideNotAvailableException,
+    RoomType,
 )
 
 
@@ -53,6 +65,16 @@ class TestClient:
         assert client.get_name() == "Ольга"
         assert client.budget == 100000
 
+    def test_pay_success(self):
+        client = Client("Ольга", 100000)
+        client.pay(50000)
+        assert client.budget == 50000
+
+    def test_pay_insufficient_funds(self):
+        client = Client("Ольга", 1000)
+        with pytest.raises(InsufficientFundsException):
+            client.pay(5000)
+
 
 class TestVirtualMethods:
 
@@ -72,6 +94,12 @@ class TestVirtualMethods:
         results = [emp.work() for emp in employees]
         assert results[0] == "Гид Анна проводит экскурсию."
         assert results[1] == "Менеджер Олег управляет отделом Туры."
+
+    def test_guide_not_available(self):
+        guide = TourGuide("Анна", 50000, ["EN", "FR"])
+        guide.is_available = False
+        with pytest.raises(GuideNotAvailableException):
+            guide.work()
 
 
 class TestMultipleInheritance:
@@ -136,3 +164,55 @@ class TestNameResolution:
         multi = MultiRoleEmployee("Сергей", 70000, ["ES"], "Продажи")
         assert isinstance(multi, TourGuide)
         assert isinstance(multi, Manager)
+
+
+class TestTransport:
+
+    def test_book_seat_success(self):
+        bus = Bus(50, "Москва-Сочи")
+        bus.book_seat(5)
+        assert bus.seats[5] is False
+
+    def test_book_seat_overload(self):
+        bus = Bus(50, "Москва-Сочи")
+        bus.book_seat(5)
+        with pytest.raises(VehicleOverloadException):
+            bus.book_seat(5)
+
+
+class TestHotel:
+
+    def test_room_booking(self):
+        hotel = Hotel("Rixos", City("Анталья", Country("Турция", False)), 5)
+        room = Room("101", RoomType.LUXURY, 15000)
+        hotel.add_room(room)
+
+        room.book()
+        assert room.is_booked is True
+
+    def test_room_double_booking(self):
+        hotel = Hotel("Rixos", City("Анталья", Country("Турция", False)), 5)
+        room = Room("101", RoomType.LUXURY, 15000)
+        hotel.add_room(room)
+
+        room.book()
+        with pytest.raises(HotelFullyBookedException):
+            room.book()
+
+
+class TestBooking:
+
+    def test_confirm_booking(self):
+        client = Client("Иван", 150000)
+        manager = Manager("Олег", 80000, "Продажи")
+        country = Country("Турция", False)
+        city = City("Анталья", country)
+        resort = Resort("Belek", city, 4.8)
+        tour = Tour("Летний Тур", 50000, 7, resort)
+
+        booking = Booking(client, tour, manager)
+        transaction = booking.confirm()
+
+        assert booking.status == "Оплачена"
+        assert client.budget == 100000
+        assert transaction.status == "Успешно"
