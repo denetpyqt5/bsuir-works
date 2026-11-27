@@ -7,7 +7,10 @@ authors = [
     { name = "denetpyqt5", email = "aiengineermain@gmail.com" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "matplotlib>=3.11.2",
+    "networkx>=3.7",
+]
 
 [project.scripts]
 fifth = "fifth:main"

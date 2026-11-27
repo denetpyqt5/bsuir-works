@@ -1,0 +1,20 @@
+Index: otis/fifth/pyproject.toml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>[project]\r\nname = \"fifth\"\r\nversion = \"0.1.0\"\r\ndescription = \"Add your description here\"\r\nreadme = \"README.md\"\r\nauthors = [\r\n    { name = \"denetpyqt5\", email = \"aiengineermain@gmail.com\" }\r\n]\r\nrequires-python = \">=3.14\"\r\ndependencies = []\r\n\r\n[project.scripts]\r\nfifth = \"fifth:main\"\r\n\r\n[build-system]\r\nrequires = [\"uv_build>=0.13.6,<0.14.0\"]\r\nbuild-backend = \"uv_build\"\r\n
+===================================================================
+diff --git a/otis/fifth/pyproject.toml b/otis/fifth/pyproject.toml
+--- a/otis/fifth/pyproject.toml	(revision 54823587e15a598115b1f4f3acbe15239776bfa6)
++++ b/otis/fifth/pyproject.toml	(date 1795767802940)
+@@ -7,7 +7,10 @@
+     { name = "denetpyqt5", email = "aiengineermain@gmail.com" }
+ ]
+ requires-python = ">=3.14"
+-dependencies = []
++dependencies = [
++    "matplotlib>=3.11.2",
++    "networkx>=3.7",
++]
+ 
+ [project.scripts]
+ fifth = "fifth:main"

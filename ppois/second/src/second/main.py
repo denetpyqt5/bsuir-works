@@ -6,65 +6,52 @@ class TourCompanyException(Exception):
     """Base exception for the whole system."""
 
 
-
 class TransportException(TourCompanyException):
     """Problems with transport (cancelled flight, breakdown)."""
-
 
 
 class InsufficientFundsException(TourCompanyException):
     """Client does not have enough money."""
 
 
-
 class InvalidClientDataException(TourCompanyException):
     """Incorrect client data (age, passport)."""
-
 
 
 class BookingNotFoundException(TourCompanyException):
     """Booking not found in the database."""
 
 
-
 class InvalidBookingDataException(TourCompanyException):
     """Incorrect booking data (date in the past, etc.)."""
-
 
 
 class InvalidBaggageDataException(TourCompanyException):
     """Problems with baggage data (forbidden items)."""
 
 
-
 class BaggageOverweightException(TourCompanyException):
     """Exceeded baggage weight limit."""
-
 
 
 class VehicleOverloadException(TourCompanyException):
     """Transport is overloaded (more people than seats)."""
 
 
-
 class VehicleNotAvailableException(TourCompanyException):
     """Transport is unavailable (under repair, booked)."""
-
 
 
 class GuideNotAvailableException(TourCompanyException):
     """Guide is unavailable (busy, sick)."""
 
 
-
 class InvalidVisaException(TourCompanyException):
     """Visa problems (missing, expired)."""
 
 
-
 class HotelFullyBookedException(TourCompanyException):
     """Hotel is fully booked."""
-
 
 
 class TransportType(Enum):

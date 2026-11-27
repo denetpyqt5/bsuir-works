@@ -1,43 +1,55 @@
+import datetime
 from abc import ABC, abstractmethod
 from enum import Enum
-import datetime
 
 
 class ComputerException(Exception):
     pass
 
+
 class ComponentNotFoundError(ComputerException):
     pass
+
 
 class InsufficientPowerError(ComputerException):
     pass
 
+
 class OverheatingError(ComputerException):
     pass
+
 
 class IncompatibleSocketError(ComputerException):
     pass
 
+
 class MemoryOverflowError(ComputerException):
     pass
+
 
 class DiskSpaceError(ComputerException):
     pass
 
+
 class InvalidOSError(ComputerException):
     pass
+
 
 class VirusDetectedError(ComputerException):
     pass
 
+
 class NetworkConnectionError(ComputerException):
     pass
+
 
 class PermissionDeniedError(ComputerException):
     pass
 
+
 class InvalidHardwareConfigError(ComputerException):
     pass
+
 
 class DriverNotFoundError(ComputerException):
     pass
@@ -50,10 +62,12 @@ class ComponentType(Enum):
     STORAGE = "Накопитель"
     PSU = "Блок питания"
 
+
 class OSFamily(Enum):
     WINDOWS = "Windows"
     LINUX = "Linux"
     MACOS = "macOS"
+
 
 class PortType(Enum):
     USB = "USB"
@@ -75,7 +89,9 @@ class Component(ABC):
     def heat_up(self, degrees: float):
         self._temperature += degrees
         if self._temperature > 90.0:
-            raise OverheatingError(f"{self._name} перегрелся! Текущая температура: {self._temperature}°C")
+            raise OverheatingError(
+                f"{self._name} перегрелся! Текущая температура: {self._temperature}°C"
+            )
 
     @abstractmethod
     def connect(self) -> str:
@@ -83,7 +99,15 @@ class Component(ABC):
 
 
 class CPU(Component):
-    def __init__(self, name: str, manufacturer: str, cores: int, frequency: float, socket: str, power_draw: int):
+    def __init__(
+        self,
+        name: str,
+        manufacturer: str,
+        cores: int,
+        frequency: float,
+        socket: str,
+        power_draw: int,
+    ):
         super().__init__(name, manufacturer, power_draw)
         self._cores = cores
         self._frequency = frequency
@@ -111,7 +135,14 @@ class GPU(Component):
 
 
 class RAM(Component):
-    def __init__(self, name: str, manufacturer: str, capacity_gb: int, speed_mhz: int, power_draw: int):
+    def __init__(
+        self,
+        name: str,
+        manufacturer: str,
+        capacity_gb: int,
+        speed_mhz: int,
+        power_draw: int,
+    ):
         super().__init__(name, manufacturer, power_draw)
         self._capacity_gb = capacity_gb
         self._speed_mhz = speed_mhz
@@ -130,14 +161,23 @@ class RAM(Component):
 
 
 class Storage(Component):
-    def __init__(self, name: str, manufacturer: str, capacity_gb: int, is_ssd: bool, power_draw: int):
+    def __init__(
+        self,
+        name: str,
+        manufacturer: str,
+        capacity_gb: int,
+        is_ssd: bool,
+        power_draw: int,
+    ):
         super().__init__(name, manufacturer, power_draw)
         self._capacity_gb = capacity_gb
         self._is_ssd = is_ssd
         self._used_space_gb = 0
 
     def connect(self) -> str:
-        return f"Накопитель {self._name} ({'SSD' if self._is_ssd else 'HDD'}) подключен."
+        return (
+            f"Накопитель {self._name} ({'SSD' if self._is_ssd else 'HDD'}) подключен."
+        )
 
     def save_file(self, size_gb: int):
         if self._used_space_gb + size_gb > self._capacity_gb:
@@ -155,7 +195,9 @@ class PowerSupply(Component):
 
     def check_power(self, total_draw: int):
         if total_draw > self._max_wattage:
-            raise InsufficientPowerError(f"БП не справляется. Нужно {total_draw}W, максимум {self._max_wattage}W.")
+            raise InsufficientPowerError(
+                f"БП не справляется. Нужно {total_draw}W, максимум {self._max_wattage}W."
+            )
 
 
 class Motherboard(Component):
@@ -170,7 +212,9 @@ class Motherboard(Component):
 
     def install_component(self, component: Component):
         if isinstance(component, CPU) and component._socket != self._socket:
-            raise IncompatibleSocketError(f"Сокет процессора ({component._socket}) не подходит к плате ({self._socket}).")
+            raise IncompatibleSocketError(
+                f"Сокет процессора ({component._socket}) не подходит к плате ({self._socket})."
+            )
         self._installed_components.append(component)
 
     def add_port(self, port_type: PortType):
@@ -284,12 +328,20 @@ class Virus(Software):
 
     def infect(self, application: Application) -> str:
         if self._danger_level > 5:
-            raise VirusDetectedError(f"Вирус {self._name} повредил {application._name}!")
+            raise VirusDetectedError(
+                f"Вирус {self._name} повредил {application._name}!"
+            )
         return f"Вирус {self._name} заразил {application._name}."
 
 
 class Antivirus(Software):
-    def __init__(self, name: str, version: str, size_gb: float, virus_database_date: datetime.date):
+    def __init__(
+        self,
+        name: str,
+        version: str,
+        size_gb: float,
+        virus_database_date: datetime.date,
+    ):
         super().__init__(name, version, size_gb)
         self._virus_database_date = virus_database_date
 
@@ -317,12 +369,21 @@ class Game(Application):
 
     def launch(self, gpu: GPU) -> str:
         if gpu._vram < self._min_gpu_vram:
-            raise MemoryOverflowError(f"Игре {self._name} нужно минимум {self._min_gpu_vram}GB видеопамяти.")
+            raise MemoryOverflowError(
+                f"Игре {self._name} нужно минимум {self._min_gpu_vram}GB видеопамяти."
+            )
         return f"Игра {self._name} запущена на {gpu._name}."
 
 
 class NetworkAdapter(Component):
-    def __init__(self, name: str, manufacturer: str, mac_address: str, speed_mbps: int, power_draw: int):
+    def __init__(
+        self,
+        name: str,
+        manufacturer: str,
+        mac_address: str,
+        speed_mbps: int,
+        power_draw: int,
+    ):
         super().__init__(name, manufacturer, power_draw)
         self._mac_address = mac_address
         self._speed_mbps = speed_mbps
@@ -337,7 +398,9 @@ class NetworkAdapter(Component):
     def send_packet(self, data_size_mb: int) -> str:
         if not self._is_connected_to_network:
             raise NetworkConnectionError("Нет подключения к сети.")
-        return f"Отправлено {data_size_mb}MB данных со скоростью {self._speed_mbps}Mbps."
+        return (
+            f"Отправлено {data_size_mb}MB данных со скоростью {self._speed_mbps}Mbps."
+        )
 
 
 class Router:
@@ -524,6 +587,7 @@ class Database(Software):
             raise ComponentNotFoundError("Таблица не найдена.")
         self._tables[table_name].append(data)
 
+
 class Server(ComputerCase):
     def __init__(self, name: str, manufacturer: str, form_factor: str, rack_units: int):
         super().__init__(name, manufacturer, form_factor)
@@ -704,12 +768,33 @@ if __name__ == "__main__":
     print("=" * 50)
 
     print("\n--- 1. Создание комплектующих ---")
-    cpu = CPU(name="Core i9", manufacturer="Intel", cores=8, frequency=3.5, socket="LGA1700", power_draw=125)
+    cpu = CPU(
+        name="Core i9",
+        manufacturer="Intel",
+        cores=8,
+        frequency=3.5,
+        socket="LGA1700",
+        power_draw=125,
+    )
     gpu = GPU(name="RTX 4090", manufacturer="NVIDIA", vram=24, power_draw=450)
-    ram = RAM(name="DDR5", manufacturer="Kingston", capacity_gb=16, speed_mhz=6000, power_draw=10)
-    storage = Storage(name="NVMe SSD", manufacturer="Samsung", capacity_gb=1000, is_ssd=True, power_draw=5)
+    ram = RAM(
+        name="DDR5",
+        manufacturer="Kingston",
+        capacity_gb=16,
+        speed_mhz=6000,
+        power_draw=10,
+    )
+    storage = Storage(
+        name="NVMe SSD",
+        manufacturer="Samsung",
+        capacity_gb=1000,
+        is_ssd=True,
+        power_draw=5,
+    )
     psu = PowerSupply(name="SuperNOVA", manufacturer="EVGA", max_wattage=850)
-    motherboard = Motherboard(name="Z790", manufacturer="ASUS", socket="LGA1700", power_draw=50)
+    motherboard = Motherboard(
+        name="Z790", manufacturer="ASUS", socket="LGA1700", power_draw=50
+    )
     case = ComputerCase(name="Dark Base", manufacturer="be quiet!", form_factor="ATX")
 
     print(f"Создан процессор: {cpu.get_info()}")
@@ -727,7 +812,13 @@ if __name__ == "__main__":
         print(f"Ошибка сборки: {e}")
 
     print("\n--- 3. Проверка блока питания ---")
-    total_power = cpu._power_draw + gpu._power_draw + ram._power_draw + storage._power_draw + motherboard._power_draw
+    total_power = (
+        cpu._power_draw
+        + gpu._power_draw
+        + ram._power_draw
+        + storage._power_draw
+        + motherboard._power_draw
+    )
     try:
         psu.check_power(total_power)
         print(f"Питания достаточно. Потребление: {total_power}W из {psu._max_wattage}W")
@@ -735,11 +826,15 @@ if __name__ == "__main__":
         print(f"Ошибка питания: {e}")
 
     print("\n--- 4. Установка ОС и софта ---")
-    windows = OperatingSystem(name="Windows 11", version="23H2", size_gb=40.0, family=OSFamily.WINDOWS)
+    windows = OperatingSystem(
+        name="Windows 11", version="23H2", size_gb=40.0, family=OSFamily.WINDOWS
+    )
     windows.install(storage)
     print(windows.boot(ram))
 
-    driver = Driver(name="NVIDIA Drivers", version="550.09", size_gb=1.5, target_device="RTX 4090")
+    driver = Driver(
+        name="NVIDIA Drivers", version="550.09", size_gb=1.5, target_device="RTX 4090"
+    )
     driver.install(storage)
     print(driver.load())
 
@@ -752,7 +847,9 @@ if __name__ == "__main__":
         print(f"Ошибка памяти: {e}")
 
     print("\n--- 6. Тест системы охлаждения ---")
-    cooler = CoolingSystem(name="NH-D15", manufacturer="Noctua", fan_count=2, power_draw=5)
+    cooler = CoolingSystem(
+        name="NH-D15", manufacturer="Noctua", fan_count=2, power_draw=5
+    )
     print(cooler.connect())
 
     print(f"Текущая температура CPU: {cpu._temperature}°C")
@@ -766,7 +863,9 @@ if __name__ == "__main__":
         print(f"Температура после охлаждения: {cpu._temperature}°C")
 
     print("\n--- 7. Действия администратора ---")
-    admin = SystemAdministrator(username="root", password_hash="super_secret_hash", root_level=10)
+    admin = SystemAdministrator(
+        username="root", password_hash="super_secret_hash", root_level=10
+    )
     try:
         admin.login("wrong_password")
     except PermissionDeniedError as e:
@@ -778,4 +877,3 @@ if __name__ == "__main__":
     print("\n" + "=" * 50)
     print("ТЕСТИРОВАНИЕ ЗАВЕРШЕНО УСПЕШНО")
     print("=" * 50)
-

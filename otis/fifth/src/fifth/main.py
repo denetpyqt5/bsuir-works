@@ -1,0 +1,251 @@
+import tkinter as tk
+from tkinter import messagebox, ttk
+
+import matplotlib
+
+matplotlib.use("TkAgg")
+import networkx as nx
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+from matplotlib.figure import Figure
+
+
+class PreferenceApp:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Метод предпочтения (Вариант 28)")
+        self.root.geometry("1300x850")
+
+        self.alternatives = [
+            "Z1: Мультимедиа презентация",
+            "Z2: Периодическое издание",
+            "Z3: Ежегодные каталоги",
+            "Z4: Корпоративный сайт",
+        ]
+
+        self.build_ui()
+
+    def build_ui(self):
+        input_frame = ttk.LabelFrame(
+            self.root, text="Оценки экспертов (чем выше балл, тем лучше)"
+        )
+        input_frame.pack(padx=10, pady=10, fill="x")
+
+        ttk.Label(input_frame, text="Эксперт").grid(row=0, column=0, padx=5, pady=5)
+        for j, alt in enumerate(self.alternatives):
+            ttk.Label(input_frame, text=alt.split(":")[0], wraplength=100).grid(
+                row=0, column=j + 1, padx=5, pady=5
+            )
+
+        # Исходные данные из задания
+        default_matrix = [
+            [3, 2, 4, 1],  # Э1
+            [1, 4, 3, 2],  # Э2
+            [2, 3, 4, 1],  # Э3
+        ]
+
+        self.entries = []
+        for i in range(3):
+            ttk.Label(input_frame, text=f"Эксперт {i + 1}").grid(
+                row=i + 1, column=0, padx=5, pady=5
+            )
+            row_entries = []
+            for j in range(4):
+                entry = ttk.Entry(input_frame, width=5)
+                entry.insert(0, str(default_matrix[i][j]))
+                entry.grid(row=i + 1, column=j + 1, padx=5, pady=5)
+                row_entries.append(entry)
+            self.entries.append(row_entries)
+
+        ttk.Button(self.root, text="Выполнить расчет", command=self.calculate).pack(
+            pady=10
+        )
+
+        matrix_frame = ttk.LabelFrame(
+            self.root,
+            text="Матрица парных предпочтений m_ik (сколько экспертов выбрали строку вместо столбца)",
+        )
+        matrix_frame.pack(padx=10, pady=5, fill="x")
+
+        self.matrix_tree = ttk.Treeview(
+            matrix_frame,
+            columns=("alt", "z1", "z2", "z3", "z4"),
+            show="headings",
+            height=4,
+        )
+        self.matrix_tree.heading("alt", text="m_ik")
+        for idx, alt in enumerate(self.alternatives):
+            self.matrix_tree.heading(f"z{idx + 1}", text=f"Z{idx + 1}")
+        self.matrix_tree.column("alt", width=180)
+        self.matrix_tree.pack(padx=5, pady=5)
+
+        result_frame = ttk.LabelFrame(self.root, text="Итоговые результаты")
+        result_frame.pack(padx=10, pady=5, fill="both", expand=True)
+
+        self.tree = ttk.Treeview(
+            result_frame,
+            columns=("alt", "c", "v", "condorcet", "rank"),
+            show="headings",
+            height=4,
+        )
+        self.tree.heading("alt", text="Альтернатива")
+        self.tree.heading("c", text="Сумма m_ik (Цена)")
+        self.tree.heading("v", text="Вес (V)")
+        self.tree.heading("condorcet", text="Условие Кондорсе")
+        self.tree.heading("rank", text="Место")
+        self.tree.column("alt", width=250)
+        self.tree.pack(padx=5, pady=5, fill="both", expand=True)
+
+        self.viz_frame = ttk.LabelFrame(self.root, text="Визуализация результатов")
+        self.viz_frame.pack(padx=10, pady=5, fill="both", expand=True)
+
+    def calculate(self):
+        matrix = [[0] * 4 for _ in range(4)]
+
+        # Проверка ввода и построение матрицы
+        for row in self.entries:
+            try:
+                scores = [int(entry.get()) for entry in row]
+            except ValueError:
+                messagebox.showerror("Ошибка", "Введите целые числа!")
+                return
+
+            for i in range(4):
+                for j in range(4):
+                    if i == j:
+                        continue
+                    # Если оценка i больше оценки j, эксперт предпочитает i
+                    if scores[i] > scores[j]:
+                        matrix[i][j] += 1
+
+        # Вывод матрицы
+        for item in self.matrix_tree.get_children():
+            self.matrix_tree.delete(item)
+        for i in range(4):
+            self.matrix_tree.insert(
+                "",
+                "end",
+                values=(
+                    f"Строка {i + 1}",
+                    matrix[i][0],
+                    matrix[i][1],
+                    matrix[i][2],
+                    matrix[i][3],
+                ),
+            )
+
+        # Подсчет сумм и весов
+        C = [sum(row) for row in matrix]
+        total_C = sum(C)
+        V = [c / total_C if total_C > 0 else 0 for c in C]
+
+        # Проверка условия Кондорсе
+        condorcet_status = []
+        for i in range(4):
+            is_winner = True
+            for k in range(4):
+                if i != k and matrix[i][k] < matrix[k][i]:
+                    is_winner = False
+                    break
+            condorcet_status.append("Да (Победитель)" if is_winner else "Нет")
+
+        # Сортировка результатов
+        results = list(zip(self.alternatives, C, V, condorcet_status))
+        results.sort(key=lambda x: (x[3] == "Да (Победитель)", x[2]), reverse=True)
+
+        for item in self.tree.get_children():
+            self.tree.delete(item)
+        for rank, (alt, c, v, cond) in enumerate(results, 1):
+            self.tree.insert("", "end", values=(alt, c, f"{v:.3f}", cond, rank))
+
+        self.draw_visuals(results, matrix)
+
+    def draw_visuals(self, results, matrix):
+        for w in self.viz_frame.winfo_children():
+            w.destroy()
+
+        labels = ["Z1", "Z2", "Z3", "Z4"]
+
+        # --- График весов ---
+        weight_map = {}
+        for alt, c, v, cond in results:
+            key = alt.split(":")[0].strip()
+            weight_map[key] = v
+        values = [weight_map[k] for k in labels]
+
+        fig1 = Figure(figsize=(5, 3.5), dpi=100)
+        ax1 = fig1.add_subplot(111)
+        bars = ax1.bar(
+            labels, values, color=["#4C72B0", "#55A868", "#C44E52", "#8172B3"]
+        )
+        ax1.set_title("Веса альтернатив (V)")
+        ax1.set_ylabel("V")
+        ax1.set_ylim(0, 1)
+        for b, v in zip(bars, values):
+            ax1.text(
+                b.get_x() + b.get_width() / 2,
+                v + 0.02,
+                f"{v:.3f}",
+                ha="center",
+                fontsize=9,
+            )
+        fig1.tight_layout()
+        canvas1 = FigureCanvasTkAgg(fig1, master=self.viz_frame)
+        canvas1.draw()
+        canvas1.get_tk_widget().pack(side="left", padx=10, pady=5)
+
+        # --- Граф предпочтений ---
+        G = nx.DiGraph()
+        G.add_nodes_from(labels)
+        for i in range(4):
+            for k in range(4):
+                if i != k and matrix[i][k] > matrix[k][i]:
+                    G.add_edge(
+                        labels[i], labels[k], label=f"{matrix[i][k]}:{matrix[k][i]}"
+                    )
+
+        fig2 = Figure(figsize=(5, 3.5), dpi=100)
+        ax2 = fig2.add_subplot(111)
+        pos = nx.circular_layout(G, scale=1.2)
+        nx.draw_networkx_nodes(
+            G,
+            pos,
+            ax=ax2,
+            node_size=1700,
+            node_color="#FFD966",
+            edgecolors="black",
+            linewidths=1.2,
+        )
+        nx.draw_networkx_labels(G, pos, ax=ax2, font_size=12, font_weight="bold")
+        nx.draw_networkx_edges(
+            G,
+            pos,
+            ax=ax2,
+            arrows=True,
+            arrowstyle="-|>",
+            arrowsize=28,
+            edge_color="#222222",
+            width=2.0,
+            connectionstyle="arc3,rad=0.12",
+            node_size=1700,
+        )
+        nx.draw_networkx_edge_labels(
+            G,
+            pos,
+            ax=ax2,
+            edge_labels=nx.get_edge_attributes(G, "label"),
+            font_size=9,
+            label_pos=0.65,
+            bbox=dict(boxstyle="round,pad=0.15", fc="white", ec="none"),
+        )
+        ax2.set_title("Граф парных предпочтений (m_ik : m_ki)")
+        ax2.axis("off")
+        fig2.tight_layout()
+        canvas2 = FigureCanvasTkAgg(fig2, master=self.viz_frame)
+        canvas2.draw()
+        canvas2.get_tk_widget().pack(side="left", padx=10, pady=5)
+
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = PreferenceApp(root)
+    root.mainloop()
